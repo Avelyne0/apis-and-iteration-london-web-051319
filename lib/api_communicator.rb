@@ -4,8 +4,13 @@ require 'pry'
 
 def get_character_movies_from_api(character_name)
   #make the web request
-  response_string = RestClient.get('http://www.swapi.co/api/people/')
+  response_string = RestClient.get("http://www.swapi.co/api/people/#{character_name}")
   response_hash = JSON.parse(response_string)
+  films.each do |results|
+    puts "This character appeared in: #{results(films)}"
+    binding.pry
+  end
+
 
   # iterate over the response hash to find the collection of `films` for the given
   #   `character`
