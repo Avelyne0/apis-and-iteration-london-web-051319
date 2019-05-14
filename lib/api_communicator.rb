@@ -20,7 +20,6 @@ def get_film_urls(character_name)
   character_data = get_character_data
   new_character = character_data.find { |character| character["name"].downcase.include?(character_name)}
   new_character["films"]
-
 end
 
 
@@ -39,8 +38,3 @@ def show_character_movies(character)
   films = get_character_movies_from_api(character)
   print_movies(films)
 end
-
-## BONUS
-
-# that `get_character_movies_from_api` method is probably pretty long. Does it do more than one job?
-# can you split it up into helper methods?
